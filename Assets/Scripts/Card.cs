@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
     // 카드 보여주기
+    public Image cardDisplayImage_D;
     public Image cardDisplayImage;
+
+    // 기본 카드 이미지
+    public Sprite cardDisplaySprite;
 
     // 카드
     public List<List<int>> Gachalist = new List<List<int>>();
@@ -33,37 +38,123 @@ public class Card : MonoBehaviour
         // 카드 개수 확인
         if (Gachalist[rand].Count > 0)
         {
+            int miniCardNum = 0;
             int CardNum = 0;
             // 카드 뽑기
             int rand2 = Random.Range(0, Gachalist[rand].Count);
 
+            //플레이어, 딜러 점수
+            if (GameManager.Instance.Dealer)
+            {
+                if (Gachalist[rand][rand2] == 11 || Gachalist[rand][rand2] == 12 || Gachalist[rand][rand2] == 13)
+                {
+                    GameManager.Instance.D_Score += 10;
+                }
+                else if(Gachalist[rand][rand2] == 1)
+                {
+                    if(GameManager.Instance.D_Score + 11 > 21)
+                    {
+                        GameManager.Instance.D_Score += 1;
+                    }
+                    else
+                    {
+                        Debug.Log(GameManager.Instance.D_Score + "+ 1 or +11");
+                    }
+                }
+                else
+                {
+                    GameManager.Instance.D_Score += Gachalist[rand][rand2];
+                }
+            }
+            else
+            {
+                if (Gachalist[rand][rand2] == 11 || Gachalist[rand][rand2] == 12 || Gachalist[rand][rand2] == 13)
+                {
+                    GameManager.Instance.P_Score += 10;
+                }
+                else if (Gachalist[rand][rand2] == 1)
+                {
+                    if (GameManager.Instance.P_Score + 11 > 21)
+                    {
+                        GameManager.Instance.P_Score += 1;
+                    }
+                    else
+                    {
+                        Debug.Log(GameManager.Instance.D_Score + "+ 1 or +11");
+                    }
+                }
+                else
+                {
+                    GameManager.Instance.P_Score += Gachalist[rand][rand2];
+                }
+            }
+
+
+            // 스프라이트 찾기
             string shape = "";
        
             if (Gachalist[rand] == Heart) {
                 CardNum = Gachalist[rand][rand2] - 1;
+                GameManager.Instance.MiniCard = "minicards_" + CardNum;
                 shape = "1.2 Poker cards_" + CardNum;
             }
             else if (Gachalist[rand] == Diamond) {
                 CardNum = 14 + Gachalist[rand][rand2];
+                miniCardNum = 12 + Gachalist[rand][rand2];
+                GameManager.Instance.MiniCard = "minicards_" + miniCardNum;
                 shape = "1.2 Poker cards_" + CardNum;
             }
             else if (Gachalist[rand] == Spade) {
                 CardNum = 27 + Gachalist[rand][rand2];
+                miniCardNum = 25 + Gachalist[rand][rand2];
+                GameManager.Instance.MiniCard = "minicards_" + miniCardNum;
                 shape = "1.2 Poker cards_" + CardNum;
             }
             else if (Gachalist[rand] == Clova) {
                 CardNum = 40 + Gachalist[rand][rand2];
+                miniCardNum = 38 + Gachalist[rand][rand2];
+                GameManager.Instance.MiniCard = "minicards_" + miniCardNum;
                 shape = "1.2 Poker cards_" + CardNum;
+            }
+
+            while (true)
+            {
+                cardDisplayImage = GetComponentInChildren<Image>();
+                if(cardDisplayImage.name == "Original")
+                {
+                    cardDisplayImage.name = "TEST";
+                    break;
+                }
             }
 
 
             Sprite cardSprite = Resources.Load<Sprite>(shape);
 
             // 카드 표시
+
+            //if (cardSprite != null && !GameManager.Instance.Dealer)
+            //{
+            //    if(GameManager.Instance.dealer_count > 0)
+            //    {
+            //        GameManager.Instance.Dealer_2 = cardSprite;
+            //    }
+            //    else
+            //    {
+            //        cardDisplayImage.sprite = cardSprite;
+            //    }
+            //}
+            //else if(cardSprite != null && GameManager.Instance.Dealer)
+            //{
+            //    cardDisplayImage_D.sprite = cardSprite;
+            //}
+            //else
+            //{
+            //    Debug.LogError(shape + " 이름의 카드 이미지X");
+            //}
+
             if (cardSprite != null)
             {
                 cardDisplayImage.sprite = cardSprite;
-
             }
             else
             {
@@ -90,5 +181,67 @@ public class Card : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void SpawnCard(Sprite cardsprite)
+    {
+        Sprite MinicardSprite = cardsprite;
+
+        Vector2 size = new Vector2(144, 192);
+
+        GameObject newImageObject = new GameObject("P_card");
+
+        newImageObject.transform.SetParent(this.transform, false);
+
+        Image imageComponent = newImageObject.AddComponent<Image>();
+
+        imageComponent.sprite = MinicardSprite;
+
+        RectTransform rectTransform = newImageObject.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = size;
+
+        if (MinicardSprite != null)
+        {
+            newImageObject.name = "Original";
+        }
+    }
+
+    public int Count = 0;
+
+    private IEnumerator CardFlipCoroutine()
+    {
+        while (GameManager.Instance.Hit)
+        {
+            if(transform.childCount > 1)
+            {
+                Count = 1;
+            }
+            SpawnCard(cardDisplaySprite);
+            yield return new WaitForSeconds(1.0f);
+            if (!GameManager.Instance.Dealer)
+            {
+                Gacha();
+                yield return new WaitForSeconds(1.0f);
+            }
+            yield return new WaitForSeconds(1.0f);
+            Count++;
+            if(Count > 1)
+            {
+                GameManager.Instance.Hit = false;
+            }
+        }
+
+        if (GameManager.Instance.dealer_count > 0 && GameManager.Instance.Dealer)
+        {
+            if (GameManager.Instance.WhatChoose)
+            {
+                Gacha();
+            }
+        }
+    }
+
+    public void GachaStart()
+    {
+        StartCoroutine(CardFlipCoroutine());
     }
 }

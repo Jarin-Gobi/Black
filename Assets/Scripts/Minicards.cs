@@ -8,7 +8,7 @@ public class Minicards : MonoBehaviour
 {
     public void SpawnMini()
     {
-        if(GameManager.Instance.Dealer && gameObject.name == "Minicards_P")
+        if(GameManager.Instance.Dealer)
         {
             return;
         }
@@ -36,7 +36,7 @@ public class Minicards : MonoBehaviour
 
     public void SpawnMiniD()
     {
-        if (!GameManager.Instance.Dealer && gameObject.name == "Minicards_D")
+        if (!GameManager.Instance.Dealer)
         {
             return;
         }

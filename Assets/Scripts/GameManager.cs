@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public Minicards minicards;
+    public Minicards minicards_d;
 
     //플레이어 선택
     public bool WhatChoose = false;
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     public int P_Money = 0;
 
+    public bool BlackJack_P = false;
 
     public Card cardDeck;
 

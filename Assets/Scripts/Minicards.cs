@@ -6,6 +6,22 @@ using UnityEngine.UI;
 
 public class Minicards : MonoBehaviour
 {
+    private void Start()
+    {
+        // GameManager 인스턴스를 찾아서 자기 자신을 등록
+        if (GameManager.Instance != null)
+        {
+            if (gameObject.name == "Minicards_D")
+            {
+                GameManager.Instance.minicards_d = this;
+            }
+            else
+            {
+                GameManager.Instance.minicards = this;
+            }
+        }
+    }
+
     public void SpawnMini()
     {
         if(GameManager.Instance.Dealer)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Result : MonoBehaviour
@@ -27,11 +28,41 @@ public class Result : MonoBehaviour
     {
         if(GameManager.Instance.P_Score > 21)
         {
+            GameManager.Instance.GameOver = false;
+            GameManager.Instance.P_Score = 0;
+            GameManager.Instance.D_Score = 0;
             StartCoroutine(Fadein());
         }
-        if(GameManager.Instance.GameOver && GameManager.Instance.P_Score < GameManager.Instance.D_Score)
+        else if(GameManager.Instance.GameOver && GameManager.Instance.P_Score < GameManager.Instance.D_Score)
         {
+            GameManager.Instance.GameOver = false;
+            GameManager.Instance.P_Score = 0;
+            GameManager.Instance.D_Score = 0;
             StartCoroutine(Fadein());
         }
+        else if(GameManager.Instance.D_Score > 21)
+        {
+            GameManager.Instance.GameOver = false;
+            GameManager.Instance.P_Score = 0;
+            GameManager.Instance.D_Score = 0;
+            SceneManager.LoadScene(0);
+        }
+        else if(GameManager.Instance.GameOver && GameManager.Instance.P_Score > GameManager.Instance.D_Score)
+        {
+            GameManager.Instance.GameOver = false;
+            GameManager.Instance.P_Score = 0;
+            GameManager.Instance.D_Score = 0;
+            SceneManager.LoadScene(0);
+        }
+        else if(GameManager.Instance.GameOver)
+        {
+            Hit();
+        }
+    }
+
+    public void Hit()
+    {
+        GameManager.Instance.GameOver = false;
+        SceneManager.LoadScene(0);
     }
 }

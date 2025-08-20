@@ -134,7 +134,574 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 336
+        width: 49
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c773101c361424e4ab40eb6781fde1df
+      internalID: -335372515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 336
+        width: 42
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c18da7283e9d82429f05e676bc490ed
+      internalID: -166221632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 336
+        width: 49
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8e4c12fe5b1dc4f90b9d1f1aeb2f31
+      internalID: -511062409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 340
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c68555e0ac9a284f8955f23d79cb637
+      internalID: 2087832391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 340
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902568e29d07cc74f86623c292859f08
+      internalID: -1233706306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 340
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28df29a0dda8204d9f63e90728850c3
+      internalID: 1523788069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee66a4c9b6e4eb043a8574e766869f0d
+      internalID: -1676025004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_7
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 265
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e6d6467d796b64d8c2f1ef01f84815
+      internalID: 1329452530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_8
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 265
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e730f8e7789b1542b00da1124c09479
+      internalID: -1660921666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_9
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 270
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac015a4385100141901dc89b8d1154d
+      internalID: 1097043207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 270
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9789639d55ce0a64483177279cb39c0f
+      internalID: -1048567571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_11
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 270
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025649465c5ddbe4a972fb1c5b8a0042
+      internalID: 503038922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadb6f5a0c1115f4d8288dc0173a6e32
+      internalID: -2136640006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d17269d68ca4042b1de7eb637e5bb5
+      internalID: 1916027314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28afe47ab2ee94a43a19ed816a28a6d6
+      internalID: -349642528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_15
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cc9dc13c374904cb860682710b3e20
+      internalID: 901701171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_16
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e65a2ba0ce14042930160c293fc98f
+      internalID: 2071943082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_17
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab74208d84a2ed4ebe529e129d101bf
+      internalID: 605889945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfd3767dae0f7541863f7e324fd6cd8
+      internalID: 590852252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_19
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 130
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17a543b71ece704790a6a63abec53c9
+      internalID: -975126664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_20
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 130
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f631dd76db087e4787ca7d75f9827ea
+      internalID: -1434165412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_21
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 130
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5143b30b2c8084b9c4595afcddba24
+      internalID: -1059160545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_22
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 130
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0412f7c8b9d89f49bef970631639fed
+      internalID: 268768217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_23
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 130
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2665dfd0f9dbbe0429b360383992aa5c
+      internalID: -630559868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b218021a1bbcc04ea8555080459d49a
+      internalID: -644136536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_25
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 60
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c404827591f42f8479cd111d01b80510
+      internalID: 1342791182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Deck of cards ( full cards )_26
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 60
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf4ff5a089a43041bf4f01b77c53042
+      internalID: 2135505116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +712,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Deck of cards ( full cards )_0: -335372515
+      Deck of cards ( full cards )_1: -166221632
+      Deck of cards ( full cards )_10: -1048567571
+      Deck of cards ( full cards )_11: 503038922
+      Deck of cards ( full cards )_12: -2136640006
+      Deck of cards ( full cards )_13: 1916027314
+      Deck of cards ( full cards )_14: -349642528
+      Deck of cards ( full cards )_15: 901701171
+      Deck of cards ( full cards )_16: 2071943082
+      Deck of cards ( full cards )_17: 605889945
+      Deck of cards ( full cards )_18: 590852252
+      Deck of cards ( full cards )_19: -975126664
+      Deck of cards ( full cards )_2: -511062409
+      Deck of cards ( full cards )_20: -1434165412
+      Deck of cards ( full cards )_21: -1059160545
+      Deck of cards ( full cards )_22: 268768217
+      Deck of cards ( full cards )_23: -630559868
+      Deck of cards ( full cards )_24: -644136536
+      Deck of cards ( full cards )_25: 1342791182
+      Deck of cards ( full cards )_26: 2135505116
+      Deck of cards ( full cards )_3: 2087832391
+      Deck of cards ( full cards )_4: -1233706306
+      Deck of cards ( full cards )_5: 1523788069
+      Deck of cards ( full cards )_6: -1676025004
+      Deck of cards ( full cards )_7: 1329452530
+      Deck of cards ( full cards )_8: -1660921666
+      Deck of cards ( full cards )_9: 1097043207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

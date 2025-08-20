@@ -8,10 +8,11 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
+    public Button hit;
+    public Button stay;
+    public Card Card_D;
+
     public bool start = true;
-    // 카드 보여주기
-    public Image cardDisplayImage_D;
-    public Image cardDisplayImage;
 
     // 기본 카드 이미지
     public Sprite cardDisplaySprite;
@@ -25,6 +26,8 @@ public class Card : MonoBehaviour
 
     private void Awake()
     {
+        hit.interactable = true;
+        stay.interactable = true;
         Gachalist.Add(Spade);
         Gachalist.Add(Heart);
         Gachalist.Add(Clova);
@@ -221,7 +224,7 @@ public class Card : MonoBehaviour
 
     public Image SpawnCard(Sprite cardSprite)
     {
-        Vector2 size = new Vector2(144, 192);
+        Vector2 size = new Vector2(108, 144);
         GameObject newImageObject = new GameObject("Card");
         newImageObject.transform.SetParent(this.transform, false);
         Image imageComponent = newImageObject.AddComponent<Image>();
@@ -266,7 +269,6 @@ public class Card : MonoBehaviour
 
     public void PlayerStart()
     {
-        GameManager.Instance.Dealer = false;
         if (start)
         {
             StartCoroutine(PlayerCardDownForStart());
@@ -280,28 +282,34 @@ public class Card : MonoBehaviour
 
     private IEnumerator PlayerCardDownForStart()
     {
+        hit.interactable = false;
+        stay.interactable = false;
         for (int i = 0; i < 2; i++)
         {
             Image newCardImage = SpawnCard(cardDisplaySprite);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
             Gacha(newCardImage);
             GameManager.Instance.minicards.SpawnMini();
-            yield return new WaitForSeconds(1.0f);
-            if(GameManager.Instance.P_Score == 21)
-            {
-                GameManager.Instance.BlackJack_P = true;
-            }
+            yield return new WaitForSeconds(0.5f);
+            //if(GameManager.Instance.P_Score == 21)
+            //{
+            //    GameManager.Instance.BlackJack_P = true;
+            //}
         }
         GameManager.Instance.Dealer = true;
+        StartCoroutine(Card_D.DealerStart());
     }
 
     private IEnumerator PlayerCardDownJust()
     {
+        hit.interactable = false;
+        stay.interactable = false;
         Image newCardImage = SpawnCard(cardDisplaySprite);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         Gacha(newCardImage);
         GameManager.Instance.minicards.SpawnMini();
-        GameManager.Instance.Dealer = true;
+        hit.interactable = true;
+        stay.interactable = true;
     }
 
     public Image DealerSecondCard;
@@ -309,10 +317,48 @@ public class Card : MonoBehaviour
     private IEnumerator DealerStart()
     {
         Image newCardImage = SpawnCard(cardDisplaySprite);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         Gacha(newCardImage);
         GameManager.Instance.minicards_d.SpawnMiniD();
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         DealerSecondCard = SpawnCard(cardDisplaySprite);
+        GameManager.Instance.Dealer = false;
+        hit.interactable = true;
+        stay.interactable = true;
+    }
+
+    //public void StartDealer()
+    //{
+    //    GameManager.Instance.Dealer = true;
+    //    StartCoroutine(DealerStart());
+    //}
+
+    public void DealerLoop()
+    {
+        hit.interactable = false;
+        stay.interactable = false;
+        GameManager.Instance.Dealer = true;
+        StartCoroutine(DealerAI());
+    }
+
+    private IEnumerator DealerAI()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Gacha(DealerSecondCard);
+        GameManager.Instance.minicards_d.SpawnMiniD();
+        while (true)
+        {
+            if(GameManager.Instance.D_Score >= 17)
+            {
+                GameManager.Instance.Dealer = false;
+                break;
+            }
+            yield return new WaitForSeconds(0.5f);
+            Image newCardImage = SpawnCard(cardDisplaySprite);
+            yield return new WaitForSeconds(0.5f);
+            Gacha(newCardImage);
+            GameManager.Instance.minicards_d.SpawnMiniD();
+        }
+        GameManager.Instance.GameOver = true;
     }
 }

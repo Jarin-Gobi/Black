@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,20 +49,23 @@ public class GameManager : MonoBehaviour
     public GameObject Hit;
     public GameObject Stay;
 
-    //µô·¯ÀÎ°¡?
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½?
     public bool Dealer = false;
 
     public string MiniCard;
 
-    //°ÔÀÓ ³¡?
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½?
     public bool GameOver = false;
 
     public int P_Score = 0;
     public int D_Score = 0;
 
-    public int P_Money = 0;
+    public int P_Money = 300;
 
     //public bool BlackJack_P = false;
 
+    public TextMeshProUGUI GameMoney;
+
+    public int Round = 0;
 
 }

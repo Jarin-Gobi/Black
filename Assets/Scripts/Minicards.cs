@@ -8,7 +8,7 @@ public class Minicards : MonoBehaviour
 {
     private void Start()
     {
-        // GameManager ÀÎ½ºÅÏ½º¸¦ Ã£¾Æ¼­ ÀÚ±â ÀÚ½ÅÀ» µî·Ï
+        // GameManager ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ Ã£ï¿½Æ¼ï¿½ ï¿½Ú±ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         if (GameManager.Instance != null)
         {
             if (gameObject.name == "Minicards_D")

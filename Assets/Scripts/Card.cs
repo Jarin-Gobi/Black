@@ -14,10 +14,10 @@ public class Card : MonoBehaviour
 
     public bool start = true;
 
-    // ±âº» Ä«µå ÀÌ¹ÌÁö
+    // ï¿½âº» Ä«ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½
     public Sprite cardDisplaySprite;
 
-    // Ä«µå
+    // Ä«ï¿½ï¿½
     public List<List<int>> Gachalist = new List<List<int>>();
     public List<int> Spade = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
     public List<int> Heart = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
@@ -38,14 +38,14 @@ public class Card : MonoBehaviour
     {
         if (Gachalist.Count == 0)
         {
-            Debug.Log("Ä«µåX");
+            Debug.Log("Ä«ï¿½ï¿½X");
             return;
         }
 
         int rand = 0;
         while (true)
         {
-            // ¸ð¾ç ¼±ÅÃ
+            // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             rand = Random.Range(0, Gachalist.Count);
 
             if (Gachalist[rand].Count > 0)
@@ -58,7 +58,7 @@ public class Card : MonoBehaviour
 
                 if (Gachalist.Count == 0)
                 {
-                    Debug.Log("¸ðµç Ä«µå°¡ ¼ÒÁøµÇ¾ú½À´Ï´Ù.");
+                    Debug.Log("ï¿½ï¿½ï¿½ Ä«ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
                     return;
                 }
             }
@@ -66,15 +66,15 @@ public class Card : MonoBehaviour
 
         //int rand = Random.Range(0, Gachalist.Count);
 
-        // Ä«µå °³¼ö È®ÀÎ
+        // Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if (Gachalist[rand].Count > 0)
         {
             int miniCardNum = 0;
             int CardNum = 0;
-            // Ä«µå »Ì±â
+            // Ä«ï¿½ï¿½ ï¿½Ì±ï¿½
             int rand2 = Random.Range(0, Gachalist[rand].Count);
 
-            //ÇÃ·¹ÀÌ¾î, µô·¯ Á¡¼ö
+            //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (GameManager.Instance.Dealer)
             {
                 if (Gachalist[rand][rand2] == 11 || Gachalist[rand][rand2] == 12 || Gachalist[rand][rand2] == 13)
@@ -121,7 +121,7 @@ public class Card : MonoBehaviour
             }
 
 
-            // ½ºÇÁ¶óÀÌÆ® Ã£±â
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® Ã£ï¿½ï¿½
             string shape = "";
        
             if (Gachalist[rand] == Heart) {
@@ -161,7 +161,7 @@ public class Card : MonoBehaviour
 
             Sprite cardSprite = Resources.Load<Sprite>(shape);
 
-            // Ä«µå Ç¥½Ã
+            // Ä«ï¿½ï¿½ Ç¥ï¿½ï¿½
 
             //if (cardSprite != null && !GameManager.Instance.Dealer)
             //{
@@ -180,7 +180,7 @@ public class Card : MonoBehaviour
             //}
             //else
             //{
-            //    Debug.LogError(shape + " ÀÌ¸§ÀÇ Ä«µå ÀÌ¹ÌÁöX");
+            //    Debug.LogError(shape + " ï¿½Ì¸ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½X");
             //}
 
             if (cardSprite != null)
@@ -189,12 +189,12 @@ public class Card : MonoBehaviour
             }
             else
             {
-                Debug.LogError(shape + " ÀÌ¸§ÀÇ Ä«µå ÀÌ¹ÌÁöX");
+                Debug.LogError(shape + " ï¿½Ì¸ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½X");
             }
 
-            Debug.Log("»ÌÀº Ä«µå ¼ýÀÚ: " + Gachalist[rand][rand2] + ", ÇÃ·¹ÀÌ¾î Á¡¼ö: " + GameManager.Instance.P_Score + ", µô·¯ Á¡¼ö: " + GameManager.Instance.D_Score);
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + Gachalist[rand][rand2] + ", ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½: " + GameManager.Instance.P_Score + ", ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + GameManager.Instance.D_Score);
 
-            // Á¦°Å
+            // ï¿½ï¿½ï¿½ï¿½
             Gachalist[rand].RemoveAt(rand2);
         }
     }

@@ -20,4 +20,9 @@ public class GameMoney : MonoBehaviour
             GameManager.Instance.GameMoney = Money;
         }
     }
+
+    private void Update()
+    {
+        Money.text = GameManager.Instance.P_Money + "P";
+    }
 }

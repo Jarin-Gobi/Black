@@ -26,6 +26,10 @@ public class Card : MonoBehaviour
 
     private void Awake()
     {
+        GameManager.Instance.GetMoney = false;
+        GameManager.Instance.GameOver = false;
+        GameManager.Instance.P_Score = 0;
+        GameManager.Instance.D_Score = 0;
         hit.interactable = true;
         stay.interactable = true;
         Gachalist.Add(Spade);
@@ -58,7 +62,7 @@ public class Card : MonoBehaviour
 
                 if (Gachalist.Count == 0)
                 {
-                    Debug.Log("��� ī�尡 �����Ǿ����ϴ�.");
+                    //Debug.Log("��� ī�尡 �����Ǿ����ϴ�.");
                     return;
                 }
             }
@@ -189,10 +193,10 @@ public class Card : MonoBehaviour
             }
             else
             {
-                Debug.LogError(shape + " �̸��� ī�� �̹���X");
+                //Debug.LogError(shape + " �̸��� ī�� �̹���X");
             }
 
-            Debug.Log("���� ī�� ����: " + Gachalist[rand][rand2] + ", �÷��̾� ����: " + GameManager.Instance.P_Score + ", ���� ����: " + GameManager.Instance.D_Score);
+            //Debug.Log("���� ī�� ����: " + Gachalist[rand][rand2] + ", �÷��̾� ����: " + GameManager.Instance.P_Score + ", ���� ����: " + GameManager.Instance.D_Score);
 
             // ����
             Gachalist[rand].RemoveAt(rand2);
@@ -237,7 +241,7 @@ public class Card : MonoBehaviour
 
     //private IEnumerator CardFlipCoroutine()
     //{
-    //    while (GameManager.Instance.Hit)
+    //    while (GameManager.Instance.re)
     //    {
     //        if(transform.childCount > 1)
     //        {
@@ -254,7 +258,7 @@ public class Card : MonoBehaviour
     //        Count++;
     //        if(Count > 1)
     //        {
-    //            GameManager.Instance.Hit = false;
+    //            GameManager.Instance.re = false;
     //        }
     //    }
 

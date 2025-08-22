@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
     public int D_Score = 0;
 
     public int P_Money = 300;
+    public int bet_Money = 0;
+    //public bool AllIn = false;
 
     //public bool BlackJack_P = false;
 
@@ -68,4 +70,7 @@ public class GameManager : MonoBehaviour
 
     public int Round = 0;
 
+    public bool GetMoney = false;
+
+    public GameObject StartView;
 }

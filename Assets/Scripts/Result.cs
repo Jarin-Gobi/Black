@@ -10,7 +10,8 @@ public class Result : MonoBehaviour
     [SerializeField] private Image Loosemoney_background;
     [SerializeField] private Button Restart;
     [SerializeField] private Button Backhome;
-    // 짐
+    public GameObject Win;
+
 
 
     private IEnumerator FadeinLoose()
@@ -30,18 +31,7 @@ public class Result : MonoBehaviour
     private void Update()
     {
         // 올인에서도 지게 됨 고쳐야 됨
-        if (GameManager.Instance.P_Money <= 0)
-        {
-            GameManager.Instance.GameOver = false;
-            StartCoroutine(FadeinLoose());
-            GameManager.Instance.P_Score = 0;
-            GameManager.Instance.D_Score = 0;
-        }
-        if ((GameManager.Instance.P_Score > 21) || (GameManager.Instance.GameOver && GameManager.Instance.P_Score < GameManager.Instance.D_Score))
-        {
-            GameManager.Instance.P_Score = 0;
-            GameManager.Instance.D_Score = 0;
-        }
+
         // else if (GameManager.Instance.GameOver && GameManager.Instance.P_Score < GameManager.Instance.D_Score)
         // {
         //     GameManager.Instance.GameOver = false;
@@ -50,10 +40,31 @@ public class Result : MonoBehaviour
         // 졌을 때
         if ((GameManager.Instance.D_Score > 21) || (GameManager.Instance.GameOver && GameManager.Instance.P_Score > GameManager.Instance.D_Score))
         {
+            if(GameManager.Instance.P_Score == 21 && !GameManager.Instance.GetMoney)
+            {
+                GameManager.Instance.GetMoney = true;
+                GameManager.Instance.P_Money += (int)(GameManager.Instance.bet_Money * 2.5);
+            }
+            else if(!GameManager.Instance.GetMoney)
+            {
+                GameManager.Instance.GetMoney = true;
+                GameManager.Instance.P_Money += GameManager.Instance.bet_Money * 2;
+            }
             GameManager.Instance.GameOver = false;
-            GameManager.Instance.P_Score = 0;
-            GameManager.Instance.D_Score = 0;
-            //SceneManager.LoadScene(0); // 임시
+            Win.SetActive(true);
+        }
+        if ((GameManager.Instance.P_Score > 21) || (GameManager.Instance.GameOver && GameManager.Instance.P_Score < GameManager.Instance.D_Score))
+        {
+            if (GameManager.Instance.P_Money <= 0)
+            {
+                GameManager.Instance.GameOver = false;
+                StartCoroutine(FadeinLoose());
+            }
+            else
+            {
+                GameManager.Instance.GameOver = false;
+                SceneManager.LoadScene(0);
+            }
         }
         // else if (GameManager.Instance.GameOver && GameManager.Instance.P_Score > GameManager.Instance.D_Score)
         // {
@@ -63,14 +74,24 @@ public class Result : MonoBehaviour
         // 이겼을 때
         if (GameManager.Instance.GameOver && GameManager.Instance.P_Score == GameManager.Instance.D_Score)
         {
-            Hit();
+            if(!GameManager.Instance.GetMoney)
+            {
+                GameManager.Instance.GetMoney = true;
+                GameManager.Instance.P_Money += GameManager.Instance.bet_Money;
+            }
+            SceneManager.LoadScene(0);
         }
         // 비겼을 때
     }
 
-    public void Hit()
+    public void re()
     {
-        GameManager.Instance.GameOver = false;
+        GameManager.Instance.P_Money = 300;
+        SceneManager.LoadScene(0);
+    }
+
+    public void Double()
+    {
         SceneManager.LoadScene(0);
     }
 }

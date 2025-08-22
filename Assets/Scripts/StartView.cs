@@ -6,35 +6,46 @@ using TMPro;
 
 public class StartView : MonoBehaviour
 {
-    private void Update()
+    [SerializeField] private TextMeshProUGUI One_third;
+    [SerializeField] private TextMeshProUGUI Half;
+    [SerializeField] private TextMeshProUGUI Howmuch;
+
+    private void Start()
     {
-        if (GameManager.Instance.Round > 0)
+        if (GameManager.Instance != null)
         {
-            Destroy(gameObject);
+            GameManager.Instance.StartView = gameObject;
         }
     }
 
-    public void HideScreen50()
+    private void Update()
     {
-        GameManager.Instance.P_Money -= 100;
-        GameManager.Instance.GameMoney.text = "" + GameManager.Instance.P_Money;
-        GameManager.Instance.Round++;
-        gameObject.SetActive(false);
+        One_third.text = (GameManager.Instance.P_Money / 3) + "P";
+        Half.text = (GameManager.Instance.P_Money / 2) + "P";
+        Howmuch.text = "현재 보유 포인트 : " + GameManager.Instance.P_Money + "P";
     }
-
 
     public void HideScreen100()
     {
-        GameManager.Instance.P_Money -= 150;
-        GameManager.Instance.GameMoney.text = "" + GameManager.Instance.P_Money;
+        GameManager.Instance.bet_Money = GameManager.Instance.P_Money / 3;
+        GameManager.Instance.P_Money -= GameManager.Instance.bet_Money;
         GameManager.Instance.Round++;
         gameObject.SetActive(false);
     }
-    
+
+
     public void HideScreen150()
     {
-        GameManager.Instance.P_Money -= 300;
-        GameManager.Instance.GameMoney.text = "" + GameManager.Instance.P_Money;
+        GameManager.Instance.bet_Money = GameManager.Instance.P_Money / 2;
+        GameManager.Instance.P_Money -= GameManager.Instance.bet_Money;
+        GameManager.Instance.Round++;
+        gameObject.SetActive(false);
+    }
+
+    public void HideScreenAllin()
+    {
+        GameManager.Instance.bet_Money = GameManager.Instance.P_Money;
+        GameManager.Instance.P_Money -= GameManager.Instance.bet_Money;
         GameManager.Instance.Round++;
         gameObject.SetActive(false);
     }

@@ -11,8 +11,30 @@ public class Result : MonoBehaviour
     [SerializeField] private Button Restart;
     [SerializeField] private Button Backhome;
     public GameObject Win;
+    public GameObject LooseOver21;
+    public GameObject LooseNotOver;
+    public GameObject Draw;
 
+    private IEnumerator POver21()
+    {
+        LooseOver21.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(0);
+    }
 
+    private IEnumerator PLoose()
+    {
+        LooseNotOver.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator DRAW()
+    {
+        Draw.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(0);
+    }
 
     private IEnumerator FadeinLoose()
     {
@@ -63,7 +85,14 @@ public class Result : MonoBehaviour
             else
             {
                 GameManager.Instance.GameOver = false;
-                SceneManager.LoadScene(0);
+                if(GameManager.Instance.P_Score > 21)
+                {
+                    StartCoroutine(POver21());
+                }
+                else
+                {
+                    StartCoroutine(PLoose());
+                }
             }
         }
         // else if (GameManager.Instance.GameOver && GameManager.Instance.P_Score > GameManager.Instance.D_Score)
@@ -79,7 +108,7 @@ public class Result : MonoBehaviour
                 GameManager.Instance.GetMoney = true;
                 GameManager.Instance.P_Money += GameManager.Instance.bet_Money;
             }
-            SceneManager.LoadScene(0);
+            StartCoroutine(DRAW());
         }
         // 비겼을 때
     }

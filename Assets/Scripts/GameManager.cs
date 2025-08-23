@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
     //public bool AllIn = false;
 
     //public bool BlackJack_P = false;
+    public bool NewGame = true;
 
     public TextMeshProUGUI GameMoney;
 
@@ -73,4 +74,20 @@ public class GameManager : MonoBehaviour
     public bool GetMoney = false;
 
     public GameObject StartView;
+
+    public string playerName;
+
+    public RankingUI rankingUI;
+
+    public void SubmitRanking()
+    {
+        //RankingManager.Instance.AddScore(playerName, P_Money);
+        
+        RankData myNewRecord = RankingManager.Instance.AddScore(playerName, P_Money + bet_Money);
+
+        rankingUI.gameObject.SetActive(true);
+
+        rankingUI.ShowRanking(myNewRecord);
+    }
+
 }

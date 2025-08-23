@@ -11,10 +11,17 @@ public class Result : MonoBehaviour
     [SerializeField] private Button Restart;
     [SerializeField] private Button Backhome;
     public GameObject Win;
+    public GameObject DealerOver21;
+    public GameObject winText;
     public GameObject LooseOver21;
     public GameObject LooseNotOver;
     public GameObject Draw;
+    public bool LooseControl = true;
 
+    private void Awake()
+    {
+        LooseControl = true;
+    }
     private IEnumerator POver21()
     {
         LooseOver21.SetActive(true);
@@ -74,15 +81,26 @@ public class Result : MonoBehaviour
             }
             GameManager.Instance.GameOver = false;
             Win.SetActive(true);
+            GameManager.Instance.bet_Money = 0;
+            if (GameManager.Instance.P_Score > GameManager.Instance.D_Score)
+            {
+                winText.SetActive(true);
+            }
+            else if(GameManager.Instance.D_Score > 21)
+            {
+                DealerOver21.SetActive(true);
+            }
         }
         if ((GameManager.Instance.P_Score > 21) || (GameManager.Instance.GameOver && GameManager.Instance.P_Score < GameManager.Instance.D_Score))
         {
+            GameManager.Instance.bet_Money = 0;
             if (GameManager.Instance.P_Money <= 0)
             {
                 GameManager.Instance.GameOver = false;
+                LooseControl = false;
                 StartCoroutine(FadeinLoose());
             }
-            else
+            else if(LooseControl)
             {
                 GameManager.Instance.GameOver = false;
                 if(GameManager.Instance.P_Score > 21)
@@ -108,6 +126,7 @@ public class Result : MonoBehaviour
                 GameManager.Instance.GetMoney = true;
                 GameManager.Instance.P_Money += GameManager.Instance.bet_Money;
             }
+            GameManager.Instance.bet_Money = 0;
             StartCoroutine(DRAW());
         }
         // 비겼을 때
@@ -115,6 +134,7 @@ public class Result : MonoBehaviour
 
     public void re()
     {
+        GameManager.Instance.NewGame = true;
         GameManager.Instance.P_Money = 300;
         SceneManager.LoadScene(0);
     }
@@ -122,5 +142,10 @@ public class Result : MonoBehaviour
     public void Double()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void Ranking()
+    {
+        GameManager.Instance.SubmitRanking();
     }
 }

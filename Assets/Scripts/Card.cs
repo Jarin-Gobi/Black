@@ -42,14 +42,12 @@ public class Card : MonoBehaviour
     {
         if (Gachalist.Count == 0)
         {
-            Debug.Log("ī��X");
             return;
         }
 
         int rand = 0;
         while (true)
         {
-            // ��� ����
             rand = Random.Range(0, Gachalist.Count);
 
             if (Gachalist[rand].Count > 0)
@@ -62,23 +60,17 @@ public class Card : MonoBehaviour
 
                 if (Gachalist.Count == 0)
                 {
-                    //Debug.Log("��� ī�尡 �����Ǿ����ϴ�.");
                     return;
                 }
             }
         }
 
-        //int rand = Random.Range(0, Gachalist.Count);
 
-        // ī�� ���� Ȯ��
         if (Gachalist[rand].Count > 0)
         {
             int miniCardNum = 0;
             int CardNum = 0;
-            // ī�� �̱�
             int rand2 = Random.Range(0, Gachalist[rand].Count);
-
-            //�÷��̾�, ���� ����
             if (GameManager.Instance.Dealer)
             {
                 if (Gachalist[rand][rand2] == 11 || Gachalist[rand][rand2] == 12 || Gachalist[rand][rand2] == 13)
@@ -125,9 +117,7 @@ public class Card : MonoBehaviour
             }
 
 
-            // ��������Ʈ ã��
             string shape = "";
-       
             if (Gachalist[rand] == Heart) {
                 CardNum = Gachalist[rand][rand2] - 1;
                 GameManager.Instance.MiniCard = "minicards_" + CardNum;
@@ -165,7 +155,6 @@ public class Card : MonoBehaviour
 
             Sprite cardSprite = Resources.Load<Sprite>(shape);
 
-            // ī�� ǥ��
 
             //if (cardSprite != null && !GameManager.Instance.Dealer)
             //{
@@ -191,14 +180,7 @@ public class Card : MonoBehaviour
             {
                 targetImage.sprite = cardSprite;
             }
-            else
-            {
-                //Debug.LogError(shape + " �̸��� ī�� �̹���X");
-            }
 
-            //Debug.Log("���� ī�� ����: " + Gachalist[rand][rand2] + ", �÷��̾� ����: " + GameManager.Instance.P_Score + ", ���� ����: " + GameManager.Instance.D_Score);
-
-            // ����
             Gachalist[rand].RemoveAt(rand2);
         }
     }
@@ -320,6 +302,7 @@ public class Card : MonoBehaviour
 
     private IEnumerator DealerStart()
     {
+        start = false;
         Image newCardImage = SpawnCard(cardDisplaySprite);
         yield return new WaitForSeconds(0.5f);
         Gacha(newCardImage);
@@ -339,10 +322,17 @@ public class Card : MonoBehaviour
 
     public void DealerLoop()
     {
-        hit.interactable = false;
-        stay.interactable = false;
-        GameManager.Instance.Dealer = true;
-        StartCoroutine(DealerAI());
+        if (!start)
+        {
+            hit.interactable = false;
+            stay.interactable = false;
+            GameManager.Instance.Dealer = true;
+            StartCoroutine(DealerAI());
+        }
+        //hit.interactable = false;
+        //stay.interactable = false;
+        //GameManager.Instance.Dealer = true;
+        //StartCoroutine(DealerAI());
     }
 
     private IEnumerator DealerAI()

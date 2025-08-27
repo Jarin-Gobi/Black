@@ -2530,6 +2530,7 @@ GameObject:
   - component: {fileID: 498084047}
   - component: {fileID: 498084046}
   - component: {fileID: 498084045}
+  - component: {fileID: 498084049}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2569,7 +2570,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1270.08, y: 714.42}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2634,6 +2635,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &498084049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498084044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0ffdca8c2ae1643a48c48a855c7d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &499685843
 GameObject:
   m_ObjectHideFlags: 0
@@ -6112,6 +6125,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270862924}
   m_CullTransparentMesh: 1
+--- !u!1 &1335013324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335013326}
+  - component: {fileID: 1335013325}
+  m_Layer: 0
+  m_Name: CheatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1335013325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335013324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b161687092dfd4eb17a2b9cc770da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardScript: {fileID: 1178938559}
+--- !u!4 &1335013326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335013324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 286.32285, y: 239.78044, z: -8.397403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339768727
 GameObject:
   m_ObjectHideFlags: 0
@@ -6536,7 +6594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E4\uC2DC\uD558\uAE30"
+  m_text: "\uADF8\uB9CC\uD558\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 824cb31da51e54849b27105a5c504f8f, type: 2}
   m_sharedMaterial: {fileID: -2946395141993463459, guid: 824cb31da51e54849b27105a5c504f8f, type: 2}
@@ -6961,6 +7019,7 @@ GameObject:
   - component: {fileID: 1477040691}
   - component: {fileID: 1477040690}
   - component: {fileID: 1477040693}
+  - component: {fileID: 1477040694}
   m_Layer: 5
   m_Name: HIT
   m_TagString: Untagged
@@ -7030,19 +7089,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1477040691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1178938559}
-        m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: PlayerStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1477040691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7093,6 +7140,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ce3988b2c80a84d811bd3452f012af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1477040694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477040687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ee7d902298d9d419bfbd0b1df80e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myButton: {fileID: 1477040690}
+  myCheat: {fileID: 1335013325}
+  card: {fileID: 1178938559}
 --- !u!1 &1477123418
 GameObject:
   m_ObjectHideFlags: 0
@@ -8548,7 +8610,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -9733,3 +9795,4 @@ SceneRoots:
   - {fileID: 596674355}
   - {fileID: 204461235}
   - {fileID: 1963188790}
+  - {fileID: 1335013326}
